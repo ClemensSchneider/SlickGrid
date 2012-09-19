@@ -378,7 +378,7 @@ if (typeof Slick === "undefined") {
     }
 
     function getCanvasWidth() {
-      var availableWidth = viewportHasVScroll ? viewportW - scrollbarDimensions.width : viewportW;
+      var availableWidth = viewportHasVScroll && !options.noVScrollbar ? viewportW - scrollbarDimensions.width : viewportW;
       var rowWidth = 0;
       var i = columns.length;
       while (i--) {
@@ -1005,7 +1005,7 @@ if (typeof Slick === "undefined") {
           shrinkLeeway = 0,
           total = 0,
           prevTotal,
-          availWidth = viewportHasVScroll ? viewportW - scrollbarDimensions.width : viewportW;
+          availWidth = viewportHasVScroll && !options.noVScrollbar ? viewportW - scrollbarDimensions.width : viewportW;
 
       for (i = 0; i < columns.length; i++) {
         c = columns[i];
